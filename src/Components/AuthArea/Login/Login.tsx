@@ -26,7 +26,7 @@ function Login(): JSX.Element {
     return (
         <div className="Login Box">
 
-            <h2>Register</h2>
+            <h2>Login</h2>
 
             <form onSubmit={handleSubmit(send)}>
 
@@ -36,7 +36,7 @@ function Login(): JSX.Element {
                 <br /><br />
                 <label>Password: </label>
                 <input type="password" name="password" ref={register({ required: true })}/>
-                <br />
+                <br /><br/>
                 <button>submit</button>
             </form>
         </div>

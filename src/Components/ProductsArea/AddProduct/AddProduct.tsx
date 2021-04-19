@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import ProductModel from "../../../Models/ProductModel";
@@ -12,6 +13,14 @@ function AddProduct(): JSX.Element {
 
     const { register, handleSubmit, errors } = useForm<ProductModel>();
     const history = useHistory();
+
+    //equivalent for componentDidMount in fc
+    useEffect(() => {
+        if(!store.getState().authState.user){
+            notify.error("please log in in order to add a product")
+            history.push("/login");
+        }
+    });
 
     async function send(product: ProductModel) {
         try {
