@@ -7,7 +7,9 @@ class DevelopmentGlobals extends Globals {
     public urls = {
         products: "http://localhost:3030/api/products/",
         // productsDelayed: "http://localhost:3030/api/products/delayed/",
-        productImages: "http://localhost:3030/api/products/images/"
+        productImages: "http://localhost:3030/api/products/images/",
+        register: "http://localhost:3030/api/auth/register/",
+        login: "http://localhost:3030/api/auth/login/"
     };
 }
 
@@ -15,7 +17,9 @@ class DevelopmentGlobals extends Globals {
 class ProductionGlobals extends Globals {
     public urls = {
         products: "http://localhost:3030/api/products/", // In real life there will be the production address
-        productImages: "http://localhost:3030/api/products/images/" // In real life there will be the production address
+        productImages: "http://localhost:3030/api/products/images/",
+        register: "http://localhost:3030/api/auth/register/",
+        login: "http://localhost:3030/api/auth/login/"
     };
 }
 

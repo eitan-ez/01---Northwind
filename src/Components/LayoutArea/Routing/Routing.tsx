@@ -6,6 +6,7 @@ import AddProduct from "../../ProductsArea/AddProduct/AddProduct";
 import ProductDetails from "../../ProductsArea/ProductDetails/ProductDetails";
 import ProductList from "../../ProductsArea/ProductList/ProductList";
 import Page404 from "../../SharedArea/Page404/Page404";
+import Register from "../../AuthArea/Register/Register";
 
 function Routing(): JSX.Element {
     return (
@@ -17,6 +18,10 @@ function Routing(): JSX.Element {
                 <Route path="/products/new" component={AddProduct} exact />
                 <Route path="/about" component={About} exact />
                 <Route path="/contact-us" component={ContactUs} exact />
+                <Route path="/register" component={Register} exact />
+
+
+
                 <Redirect from="/" to="/home" exact />
                 <Route component={Page404} /> {/* Must be Last! */}
             </Switch>
