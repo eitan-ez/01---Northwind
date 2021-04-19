@@ -1,0 +1,13 @@
+.ContactUs {
+	margin: 20px;
+    padding: 20px;
+}
+
+.ContactUs > .Headline { /* שם מומצא */
+    text-align: center;
+}
+
+.ContactUs > .TextBox { /* שם מומצא */
+    width: 450px;
+    margin: 5px !important;
+}
