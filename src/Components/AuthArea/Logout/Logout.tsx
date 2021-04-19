@@ -15,5 +15,5 @@ function Logout(): JSX.Element {
 });
 
 return null;
-
+}
 export default Logout;
