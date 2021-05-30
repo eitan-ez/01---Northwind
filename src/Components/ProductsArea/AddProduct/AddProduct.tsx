@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import ProductModel from "../../../Models/ProductModel";
+import jwtAxios from "../../../Redux/jwtAxios";
 import { productAddedAction } from "../../../Redux/ProductsState";
 import store from "../../../Redux/Store";
 import globals from "../../../Services/Globals";
@@ -32,7 +33,8 @@ function AddProduct(): JSX.Element {
             myFormData.append("stock", product.stock.toString());
             myFormData.append("image", product.image.item(0));
 
-            const response = await axios.post<ProductModel>(globals.urls.products, myFormData);
+            const headers = { "authorization": "Bearer " +  store.getState().authState.user.token };
+            const response = await jwtAxios.post<ProductModel>(globals.urls.products, myFormData);
             const addedProduct = response.data;
 
             // With Redux:

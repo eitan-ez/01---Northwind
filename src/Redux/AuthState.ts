@@ -3,6 +3,13 @@ import UserModel from "../Models/UserModel";
 // 
 export class AuthState {
     public user: UserModel = null;
+    public constructor() {
+        const storedUser = JSON.parse(localStorage.getItem("user"));
+        if (storedUser) {
+            this.user = storedUser;
+        }
+    }
+    
 }
 
 export enum AuthActionType {
@@ -36,9 +43,11 @@ export function authReducer(currentState: AuthState = new AuthState(), action: A
         case AuthActionType.Register:
         case AuthActionType.Login:
             newState.user = action.payload;
+            localStorage.setItem("user", JSON.stringify(newState.user));
             break;
         case AuthActionType.Logout:
             newState.user = null;
+            localStorage.removeItem("user");
             break;
     }
 

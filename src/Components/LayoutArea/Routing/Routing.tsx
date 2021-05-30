@@ -8,6 +8,7 @@ import ProductList from "../../ProductsArea/ProductList/ProductList";
 import Page404 from "../../SharedArea/Page404/Page404";
 import Register from "../../AuthArea/Register/Register";
 import Login from "../../AuthArea/Login/Login";
+import Logout from "../../AuthArea/Logout/Logout";
 
 function Routing(): JSX.Element {
     return (
@@ -21,6 +22,7 @@ function Routing(): JSX.Element {
                 <Route path="/contact-us" component={ContactUs} exact />
                 <Route path="/register" component={Register} exact />
                 <Route path="/login" component={Login} exact />
+                <Route path="/logout" component={Logout} exact />
 
 
 
